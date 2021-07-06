@@ -1,0 +1,202 @@
+
+
+
+
+
+li
+{
+list-style: none;
+}
+.XD
+{
+    display: flex;
+}
+
+body
+{
+    /*background: #ceaf18;*/
+    background: white;
+}
+.row
+{
+margin-top: 2px; 
+margin-bottom: 2px; 
+}
+.card-title
+{
+    color: dodgerblue;
+    text-align: center;
+    font-weight: 800;
+}
+.card-text
+{
+    color: green;
+    text-align: center;
+    font-weight: 800;
+}
+#busca 
+{
+    background-color: white;
+    font-weight: 300;
+    color: white;
+}
+#register
+{
+    background-color: white;
+    font-weight: 300;
+    color: white;
+}
+#login
+{
+    background-color: white;
+    font-weight: 300;
+    color: white;
+}
+#cart
+{
+    background-color: #b79801;
+    font-weight: 300;
+    color: white;
+}
+#letra
+{
+    font-weight: 1000;
+    color:black;
+}
+header
+{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: rgb(18, 34, 179);
+    height: 50px;
+    width: 100%;
+    
+    
+}
+#botones
+{
+    background-color: transparent;
+    
+
+}
+
+.container
+{
+    
+    background-color: white;
+    margin-top: 50px;
+    padding: 5px;
+}
+.jaguar
+{
+    width: 60px;
+    
+}
+.cabeza
+{
+    width: 100%;
+    padding-top: 0px ;
+    display: flex;
+    align-items: flex-start;
+    background: lightgray;
+}
+.card-element
+{
+    padding:5px;
+}
+.lupa
+{
+    opacity: 0.5;
+    width: 25px;
+}
+#buscador
+{
+    border: none;
+}
+#pesquisar
+{
+    position: relative;
+    left: -40px;
+    
+}
+#caja
+{
+    display: flex;
+}
+
+#prueba
+{
+    position: relative;
+    right: -60px;
+}
+.cabeza *
+{
+    
+    background: white;
+}
+.card.card-sm *
+{
+    background: transparent;
+}
+
+.menu *
+{
+    background: white;
+
+}
+.menu card.card-sm *
+{
+    background: transparent;
+}
+.menu .col-md-12
+{
+    background: transparent;
+}
+/*
+.card-element.row.no-gytters.align-items-start
+{
+    background: transparent;
+}
+.col
+{
+    background: transparent;
+}
+*/
+#letra
+{
+    background: white;
+}
+#listaproductos
+{
+    display: flex;
+    background: white;
+    padding: 3px;
+}
+.cuerpo.card
+{
+    height: 200px;
+}
+.piedepagina *
+{
+    align-items: center;
+    background: white;
+}
+#dispo
+{
+    display: flex;
+    height: 80px;
+
+}
+/*about*/
+.linea
+{
+    text-align: center;
+    height:300px;
+    background-color: white;
+}
+/*detail*/
+#foto
+{
+    height: 300px;
+}

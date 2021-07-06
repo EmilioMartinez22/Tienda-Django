@@ -1,0 +1,580 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!---->
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+    <title>TiendaApp</title>
+    <style>
+        li
+        {
+        list-style: none;
+        }
+        .XD
+        {
+            display: flex;
+        }
+
+        body
+        {
+            /*background: #ceaf18;*/
+            background: white;
+        }
+        .row
+        {
+        margin-top: 2px; 
+        margin-bottom: 2px; 
+        }
+        .card-title
+        {
+            color: dodgerblue;
+            text-align: center;
+            font-weight: 800;
+        }
+        .card-text
+        {
+            color: green;
+            text-align: center;
+            font-weight: 800;
+        }
+        #busca 
+        {
+            background-color: white;
+            font-weight: 300;
+            color: white;
+        }
+
+
+        #login,#register,#carrito,#registro
+        {
+            background: #ff0157;
+            color:white;
+            letter-spacing: 2px !important;
+            transition: 0.5s !important;
+        }
+    
+        #letra
+        {
+            font-weight: 1000;
+            color:black;
+            background: #ff0157;
+        }
+        header
+        {
+            display:flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            background-color: rgb(18, 34, 179);
+            height: 50px;
+            width: 100%;
+            
+            
+        }
+        #botones
+        {
+            background-color: transparent;
+            
+
+        }
+
+        .container
+        {
+            
+            background-color: white;
+            margin-top: 50px;
+            padding: 5px;
+        }
+        .jaguar
+        {
+            width: 60px;
+            
+        }
+        .cabeza
+        {
+            width: 100%;
+            padding-top: 0px ;
+            display: flex;
+            align-items: flex-start;
+            background: lightgray;
+        }
+        .card-element
+        {
+            padding:5px;
+        }
+        .lupa
+        {
+            opacity: 0.5;
+            width: 25px;
+        }
+        #buscador
+        {
+            border: none;
+        }
+        #pesquisar
+        {
+            position: relative;
+            left: -40px;
+            
+        }
+        #caja
+        {
+            display: flex;
+        }
+
+        #prueba
+        {
+            position: relative;
+            right: -60px;
+        }
+        .cabeza *
+        {
+            
+            background: white;
+        }
+        .card.card-sm *
+        {
+            background: transparent;
+        }
+
+        .menu *
+        {
+            background: white;
+
+        }
+        .menu card.card-sm *
+        {
+            background: transparent;
+        }
+        .menu .col-md-12
+        {
+            background: transparent;
+        }
+        /*
+        .card-element.row.no-gytters.align-items-start
+        {
+            background: transparent;
+        }
+        .col
+        {
+            background: transparent;
+        }
+        */
+        
+        #listaproductos
+        {
+            display: flex;
+            background: white;
+            padding: 3px;
+        }
+        .cuerpo.card
+        {
+            height: 200px;
+        }
+        .piedepagina *
+        {
+            align-items: center;
+            background: white;
+        }
+        #dispo
+        {
+            display: flex;
+            height: 80px;
+
+        }
+        /*about*/
+        .linea
+        {
+            text-align: center;
+            height:300px;
+            background-color: white;
+        }
+        /*detail*/
+        #foto
+        {
+            height: 300px;
+        }
+        #caja_arriba
+        {
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            align-items: center;
+        }
+        #Titulo
+        {
+            margin-left: 50px;
+            margin-right: 50px;
+            text-transform: uppercase;
+        }
+        #elemento_cabeza 
+        {
+            width: 100vw;
+        }
+
+    </style>
+</head>
+
+        <!----cabecera------------->
+        <div  class="cabeza">
+
+            <div id="elemento_cabeza"  class="col-md-12">
+
+                <div class="card card-sm">
+
+                    <div class="card-element row no-gytters align-items-start"> 
+
+                        <div class="col" id="caja_arriba">
+
+                            <img src="https://cdn.pixabay.com/photo/2012/04/12/10/51/jaguar-29442_960_720.png" class="jaguar">
+                        
+                        </div>
+                        <div  id= "botones" class="col-auto">
+
+                            <p id="user_name">Hola {{request.user}}</p>      
+                            <a href="{% url 'logout'%}"><button id="login" class= "btn btn-sucess" > <span id="letra">L</span>ogin</button></a>
+                            <a id="registro" href= "{% url 'register'%}" class= "btn btn-sucess"> <span id="letra">R</span>egistro</a>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--menu----------------------->
+
+        <div  class="menu" class="row">
+            <div  class="col-md-12">
+                <form class="card card-sm">
+                    <div class="card-body row no-gytters align-items-center"> 
+                        <div class="col">
+
+                            <a href="{% url 'index' %}" id="login" class= "btn btn-sucess" > <span id="letra">H</span>ome</a>
+                            <a href=" {% url 'about' %}" id="register" class= "btn btn-sucess"> <span id="letra">C</span>ategorias</a>
+                            <a  href=" {% url 'about' %}" class= "btn btn-sucess" id="register" > <span id="letra">A</span>cerca de</a>
+                            <a href="{% url 'register' %}" id="register" class= "btn btn-sucess"> <span id="letra">C</span>ontacto</a>
+                            <button class= "btn btn-sucess" id= "register"> <span id="letra">N</span>uevo producto</button>
+                            
+                        </div>
+                        <div id="prueba" class="col-auto">
+                                    <div id="caja">
+                                        <div >
+                                            <input id="buscador" type="search" name='item_name' placeholder="Pide un deseo" class="form-control form-control-borderless">
+                                        </div>
+                                        <div>
+                                        <button id="pesquisar" class= "btn btn-sucess" type="submit"> <img class="lupa" src="https://thumbs.dreamstime.com/b/b%C3%BAsqueda-icono-de-la-lupa-vector-ejemplo-simple-del-elemento-concepto-ui-infographic-en-el-fondo-blanco-147394217.jpg>"></button>
+                                        </div>
+                                    </div>
+                        </div>
+                       
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+
+
+
+
+<body>
+    <div class="container">
+                {% block content %}
+
+        <!--<div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="carrito" data-html= "true" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                            sagittis lacus vel augue laoreet rutrum faucibus.">
+                              Carrito (vacio)
+                            </button>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                      </form>
+                    </div>
+                  </nav>
+
+            </div>
+
+        </div>
+
+
+        
+        <div class="row">
+            <div class="col-md-12">
+                <form class="card card-sm">
+                    <div class="card-body row no-gytters align-items-center"> 
+                        <div class="col">
+                            <input type="search" name='item_name' placeholder="Que órgano necesitas?" class="form-control form-control-borderless">
+                        </div>
+                        <div class="col-auto">
+                        <button id="busca" class= "btn btn-sucess" type="submit"> <span id="letra">S</span>earch</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        -->
+
+
+
+        
+                <div class="row">
+            
+                
+
+                    
+                
+                    {% for product in product_objects %}
+                        {%if product.title == "Bolso Naro" or  product.title == "Bolso 2" or product.title == "Bolso Nylon" %}
+                        
+                            
+                            <div class="col-md-4">
+                                <div class="card">
+
+                                    <img src="{{ product.image}}" class="card-img-top">
+                                    <div class="card-body">
+                                        <div id="nm{{product.id}}" class="card-title">
+                                            {{product.title}}
+                                        </div>
+                                        <div class="card-text">
+                                            $ {{product.category}}
+                                        </div>
+
+                                        <a href="{{product.id}}" class="btn btn-warning">View</a>
+                                        <button id="{{product.id}}" class="btn atc btn-warning">Add to cart</button>
+
+                                    </div> 
+
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-12">
+                                
+                                    
+                                    <div id="listaproductos"class="card-body">
+                                        <div class="col">
+                                            {{product.title}}
+                                        </div>
+                                        <div class="col-auto">
+                                            $ {{product.price}}
+                                        </div>
+                                        <a href="{{product.id}}" class="btn btn-warning">View</a>
+                                        <button id="{{product.id}}" class="btn atc btn-warning">Add to cart</button>
+                                       
+
+                                    </div> 
+
+                                
+                            </div>
+                        {% endif %} 
+                    {% endfor %}
+                {% endblock %}
+                </div> 
+        
+<!-----------paginator-------------------------------------------------------------------------------------------->
+        <!--<div class="row">
+            <div class="col-md-3 offset-md-4 XD" >
+                <ul class="pagination"> </ul>
+                {% if product_objects.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ product_objects.previous_page_number }}">Anterior</a>
+                    </li>
+                {% endif%}
+                      
+                     <li class="page-item active">
+                        <a  class= "page-link" href="?page={{ product_objects.previous.number }}">Actual</a>
+                    </li>
+                        
+                {% if product_objects.has_next %}
+                     <li class="page-item">
+                        <a class = "page-link" href="?page={{ product_objects.next_page_number }}">Proximo</a>
+                    </li>
+                {%endif%}
+
+            </div>
+            
+        </div>
+
+
+         <div class="row">
+            <div class="col-md-3 offset-md-4 XD" >
+                <ul class="pagination"> </ul>
+                {% if product_objects.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ product_objects.previous_page_number }}">Anterior</a>
+                    </li>
+                {% endif%}
+                       
+                     <li class="page-item active">
+                        <a  class= "page-link" href="?page={{ product_objects.previous.number }}">Actual</a>
+                    </li>
+                    
+                {% if product_objects.has_next %}
+                     <li class="page-item">
+                        <a class = "page-link" href="?page={{ product_objects.next_page_number }}">Proximo</a>
+                    </li>
+                {%endif%}
+
+            </div>
+            
+        </div>-->
+
+
+
+    </div>
+    
+    <div class="piedepagina">
+        <div id="topper" class="col-md-12">
+            <div  class="card card-sm">
+                   <p>Pie de página<p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    console.log("Hola")
+
+    if(localStorage.getItem('cart')==null){
+        var cart = {};
+    }
+    else{
+        cart = JSON.parse(localStorage.getItem('cart'));
+        cart = {};
+        
+    }
+    $(document).on('click','.atc',function(){
+        console.log("el boton fue clickeado");
+        var item_id = this.id.toString();
+        console.log(item_id);
+
+        if(cart[item_id] != undefined){
+            cart[item_id] = cart[item_id] + 1;
+        }
+        else{
+            cart[item_id] = 1;
+        }
+
+        console.log(cart);
+        
+        
+
+        localStorage.setItem('cart',JSON.stringify(cart));
+        document.getElementById("carrito").innerHTML = "Carrito(" + Object.keys(cart).length + ")";
+
+       
+
+    });
+    //$(function () {
+      //  $('[data-toggle="popover"]').popover()
+      //  document.getElementById("carrito").setAttribute('data-content','<h2>Tu carrito</h2>');
+      //  })
+
+    let btnUwU = document.getElementsByClassName("atc")[0];
+
+    btnUwU.addEventListener('click', () => {
+        DisplayCart(cart);
+    })
+    
+    DisplayCart(cart);
+    function DisplayCart(cart){
+        var cartString ="";
+        cartString += "<h2>Tu</h2>";
+        var cartIndex = 1;
+        for(var x in cart){
+            //console.log(x, Object.keys(x), typeof x, typeof Object.keys(x))
+            cartString += cartIndex;
+            cartString += document.getElementById("nm" + x).innerHTML + "cantidad" + " " + cart[x] + "<br>"
+            cartIndex+=1;
+        }
+        document.getElementById("carrito").setAttribute('data-content', cartString);
+        $('[data-toggle="popover"]').popover(); 
+        
+    }
+
+    //código de eliminación de botones
+        //gets
+    let btnRegistro = document.getElementById("registro")
+    let btnLogin = document.getElementById("login")
+    let magia = document.getElementById("user_name");
+    let endWord = magia.textContent.split(" ")[1]
+        //
+    if(endWord == 'KK'){
+        let group = "admin"
+    } else {
+        let group = "client"
+    }
+
+    if(endWord == "AnonymousUser"){
+        magia.textContent = '';
+    } else {
+        if( group == "client" ){
+            let carrito = document.createElement('a')
+            carrito.setAttribute("class", "btn btn-sucess")
+            carrito.setAttribute('id', 'carrito')
+            carrito.innerHTML = `<span>C</span>ariito`
+            document.getElementById("botones").appendChild(carrito)
+        }
+        document.getElementsByTagName('body')[0].appendChild(btnRegistro)
+        btnRegistro.textContent = ""
+        btnRegistro.setAttribute("class",'')
+        btnRegistro.setAttribute("id", "")
+        btnLogin.innerHTML = `<span id="letra">S</span>alir`
+    }
+
+</script>
+
+
+
+
+
+
+</html>
+
+
+
+    <br/>
+   
+    
+    
+    
+
